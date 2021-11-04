@@ -1,4 +1,32 @@
-.start-button {
+
+* {
+    font-family: "Lato Extended", "Leto", "Helvetica Neue", Helvetica, Arial, sans-serif; 
+}
+
+body {
+    background-color: #245BF8;
+}
+
+.header {
+    background-color: #C6181E;
+    color: #FFF;
+    width: 100%;
+    height: 75px;
+    text-align: center;
+    font-size: 30px;
+}
+
+.container {
+    position: relative;
+    bottom: -300px;
+    width: 500px;
+    height: 50px;
+    left: 450px;
+    display: flex;
+    align-items: center;
+}
+
+.button {
     background-color: #C6181E;
     margin: auto;
     display: flex;
@@ -9,27 +37,18 @@
     font-size: 40px;
     border-radius: 25px;
     border: hidden;
-    font-family: "Lato Extended", "Leto", "Helvetica Neue", Helvetica, Arial, sans-serif; 
-    transition: 0.4s;
+    transition: 0.2s;
     cursor: pointer;
+    box-shadow: 0 9px #999;
 }
 
-.start-button:hover {
-    background-color: #245BF8;
+.button:hover {
+    background-color: #B40005;
     color: white;
 }
 
-.start-button {
+.button:active {
+    background-color: #B40005;
     box-shadow: 0 5px #666;
-    transform: translateY(4px)
-}
-
-div {
-    position: relative;
-    bottom: -300px;
-    width: 500px;
-    height: 50px;
-    left: 450px;
-    display: flex;
-    align-items: center;
+    transform: translateY(4px);
 }
