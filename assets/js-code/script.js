@@ -25,7 +25,8 @@ var updateCountDown = function () {
 
     timerEl.innerHTML = `${timeLeft}: ${seconds}`;
     time--;
-    if (time === 0) {
+    if (time <= 0) {
+        time = 0;
         clearInterval(timerEnd);
         stageSix();
     }
@@ -95,6 +96,7 @@ var stageFive = function () {
         else {
             answer1.textContent = "wrong";
             answer1.style.color = "yellow";
+            time -= 10;
         }
         nextQuestion.addEventListener('click', function () {
             stageSix();
@@ -109,6 +111,7 @@ var stageFive = function () {
         else {
             answer2.textContent = "wrong";
             answer2.style.color = "yellow";
+            time -= 10;
         }
         nextQuestion.addEventListener('click', function () {
             stageSix();
@@ -122,7 +125,8 @@ var stageFive = function () {
         }
         else {
             answer3.textContent = "wrong";
-            answer3.style.color = "yellow";
+            answer3.style.color = "yellow"; 
+            time -= 10;
         }
         nextQuestion.addEventListener('click', function () {
             stageSix();
@@ -137,6 +141,7 @@ var stageFive = function () {
         else {
             answer4.textContent = "wrong";
             answer4.style.color = "yellow";
+            time -= 10; 
         }
         nextQuestion.addEventListener('click', function () {
             stageSix();
@@ -167,6 +172,7 @@ var stageFour = function () {
         else {
             answer1.textContent = "wrong";
             answer1.style.color = "yellow";
+            time -= 10;
         }
         nextQuestion.addEventListener('click', function () {
             stageFive();
@@ -181,6 +187,7 @@ var stageFour = function () {
         else {
             answer2.textContent = "wrong";
             answer2.style.color = "yellow";
+            time -= 10; 
         }
         nextQuestion.addEventListener('click', function () {
             stageFive();
@@ -195,6 +202,7 @@ var stageFour = function () {
         else {
             answer3.textContent = "wrong";
             answer3.style.color = "yellow";
+            time -= 10; 
         }
         nextQuestion.addEventListener('click', function () {
         })
@@ -208,6 +216,7 @@ var stageFour = function () {
         else {
             answer4.textContent = "wrong";
             answer4.style.color = "yellow";
+            time -= 10;
         }
         nextQuestion.addEventListener('click', function () {
             stageFive();
@@ -239,6 +248,7 @@ var stageThree = function () {
         else {
             answer1.textContent = "wrong";
             answer1.style.color = "yellow";
+            time -= 10;
         }
         nextQuestion.addEventListener('click', function () {
             stageFour();
@@ -253,6 +263,7 @@ var stageThree = function () {
         else {
             answer2.textContent = "wrong";
             answer2.style.color = "yellow";
+            time -= 10;
         }
         nextQuestion.addEventListener('click', function () {
             stageFour();
@@ -267,6 +278,7 @@ var stageThree = function () {
         else {
             answer3.textContent = "wrong";
             answer3.style.color = "yellow";
+            time -= 10; 
         }
         nextQuestion.addEventListener('click', function () {
             stageFour();
@@ -281,6 +293,7 @@ var stageThree = function () {
         else {
             answer4.textContent = "wrong";
             answer4.style.color = "yellow";
+            time -= 10;
         }
         nextQuestion.addEventListener('click', function () {
             stageFour();
@@ -311,6 +324,7 @@ var stageTwo = function () {
         else {
             answer1.textContent = "wrong";
             answer1.style.color = "yellow";
+            time -= 10;
         }
         nextQuestion.addEventListener('click', function () {
             stageThree();
@@ -325,6 +339,7 @@ var stageTwo = function () {
         else {
             answer2.textContent = "wrong";
             answer2.style.color = "yellow";
+            time -= 10;
         }
         nextQuestion.addEventListener('click', function () {
             stageThree();
@@ -339,6 +354,7 @@ var stageTwo = function () {
         else {
             answer3.textContent = "wrong";
             answer3.style.color = "yellow";
+            time -= 10;
         }
         nextQuestion.addEventListener('click', function () {
             stageThree();
@@ -352,7 +368,8 @@ var stageTwo = function () {
         }
         else {
             answer4.textContent = "wrong";
-            answer4.style.color = "yellow";
+            answer4.style.color = "yellow"; 
+            time -= 10;
         }
         nextQuestion.addEventListener('click', function () {
             stageThree();
@@ -374,7 +391,8 @@ var stageOne = function () {
         }
         else {
             answer1.textContent = "wrong";
-            answer1.style.color = "yellow";
+            answer1.style.color = "yellow"; 
+            time -= 10;
         }
         nextQuestion.addEventListener('click', function () {
             stageTwo();
@@ -388,7 +406,8 @@ var stageOne = function () {
         }
         else {
             answer2.textContent = "wrong";
-            answer2.style.color = "yellow";
+            answer2.style.color = "yellow"; 
+            time -= 10;
         }
         nextQuestion.addEventListener('click', function () {
             stageTwo();
@@ -404,6 +423,7 @@ var stageOne = function () {
         else {
             answer3.textContent = "wrong";
             answer3.style.color = "yellow";
+            time -= 10;
         }
         nextQuestion.addEventListener('click', function () {
             stageTwo();
@@ -417,7 +437,8 @@ var stageOne = function () {
         }
         else {
             answer4.textContent = "wrong";
-            answer4.style.color = "yellow";
+            answer4.style.color = "yellow"; 
+            time -= 10;
         }
         nextQuestion.addEventListener('click', function () {
             stageTwo();
