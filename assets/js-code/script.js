@@ -8,6 +8,8 @@ var answer2 = document.createElement('button');
 var answer3 = document.createElement('button');
 var answer4 = document.createElement('button');
 var nextQuestion = document.createElement('button');
+var viewScoresBtn = document.createElement('button');
+var scores = document.createElement('ul')
 var questions = [
     'Which planet is closest to the sun?', 
     'Which planet is the largest?', 
@@ -16,6 +18,8 @@ var questions = [
     "Which four planets are called the 'gas giants'?"
 ]
 var results = document.createElement('div');
+var allScores = [];
+var newScores = [];
 
 //This function is the timer
 var updateCountDown = function () {
@@ -36,7 +40,7 @@ var updateCountDown = function () {
 var makeQuestion = function () {
     questionBlock.setAttribute('class', 'question');
     questionBlock.innerHTML = '<p>' + questions[0] + "</p>";
-    
+
     answer1.setAttribute('class', 'answer');
     answer1.textContent = "Mars";
 
@@ -56,7 +60,28 @@ var makeQuestion = function () {
     document.body.append(questionBlock);
 };
 
+var viewScore = function() {
+    results.remove();
+    viewScoresBtn.remove();
+
+    localStorage.getItem(allScores);
+
+    scores.setAttribute('class', 'score-block');
+    document.body.append(scores);
+
+    var scoreLi = document.createElement("li");
+
+    for (i = 0; i < allScores.length; i++) {
+        console.log("I work!");
+        scoreLi.innerHTML = "<p>" + allScores[i] + "</p>"
+        scores.appendChild(scoreLi);
+        console.log("I also work!");
+    }
+}
+
 var stageSix = function () {
+    clearInterval(timerEnd);
+
     questionBlock.remove();
     answer1.remove();
     answer2.remove();
@@ -65,11 +90,25 @@ var stageSix = function () {
     timerEl.remove();
     nextQuestion.remove();
 
+    viewScoresBtn.setAttribute('class', 'answer');
+    viewScoresBtn.setAttribute('id', 'veiw-button')
+    viewScoresBtn.textContent = "Click here to see your score history";
+    document.body.append(viewScoresBtn);
+
     results.setAttribute('class', 'results');
     results.style.width = '900px';
     results.style.height = '150px';
     results.innerHTML = "<p>Your score is " + time + "</p>";
     document.body.append(results);
+    newScores.push(time);
+    allScores.push(newScores);
+    localStorage.setItem("allScores", allScores);
+
+    scores.setAttribute("id", "test")
+    
+    viewScoresBtn.addEventListener('click', function() {
+        viewScore();
+    })
 };
 
 var stageFive = function () {

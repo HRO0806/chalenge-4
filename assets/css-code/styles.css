@@ -129,7 +129,7 @@ p {
     background-color: #C6181E;
     color: white;
     position: relative;
-    top: 0px;
+    top: -100px;
     margin: 100px;
     left: 150px;
 }
@@ -139,4 +139,29 @@ p {
     font-size: 100px;
     width: 900px;
     height: 150px;
+}
+
+#veiw-button {
+    position: relative;
+    top: 300px;
+    left: 500px
+}
+
+.score-block {
+    height: 400px;
+    width: 900px;
+    cursor: pointer;
+    background-color: #C6181E;
+    color: white;
+    position: relative;
+    top: -100px;
+    margin: 100px;
+    left: 150px; 
+}
+
+.score-block p {
+    font-size: 50px;
+    background-color: #C6181E;
+    width: 900px;
+    height: 400px;
 }
